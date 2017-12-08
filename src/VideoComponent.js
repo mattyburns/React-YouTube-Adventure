@@ -5,7 +5,7 @@ class VideoComponent extends Component {
     super(props);
     this.state = {
       videoIndex: 0,
-      videoId: "W0LHTWG-UmQ",
+      videoId: "",
       videoArray: ["W0LHTWG-UmQ","zj05Pebbkbc","dlF1KxtArCg","Nv07q-SFgNc","-Z636P1l0Hs"]
     }
 
@@ -15,6 +15,11 @@ class VideoComponent extends Component {
 
   changeVideo(event){
     let count = this.state.videoIndex
+    if (count >= 4){
+      count = -1
+    }else{
+      count = this.state.videoIndex
+    }
     let index = count + 1
     this.setState({videoIndex: index})
     this.setState({videoId: this.state.videoArray[this.state.videoIndex]})
@@ -22,15 +27,11 @@ class VideoComponent extends Component {
 
 
   render(){
-
     let changeVideo = (event) => this.changeVideo(event)
-
     let videoId = this.state.videoId
-
     let url = `https://www.youtube.com/embed/${videoId}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=${videoId}`
 
     return(
-
       <div>
         <button onClick={changeVideo}>Push me</button>
 
@@ -41,12 +42,8 @@ class VideoComponent extends Component {
         </div>
 
       </div>
-
     )
   }
-
-
-
 }
 
 
