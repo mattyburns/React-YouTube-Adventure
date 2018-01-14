@@ -1,4 +1,4 @@
-#React-YouTube-Adventure
+React-YouTube-Adventure
 
 I built this repo as an early experiment for an interactive documentary project I was involved in through Code for Boston. 
 
